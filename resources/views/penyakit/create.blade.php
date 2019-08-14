@@ -3,7 +3,8 @@
 	@section('main')
 	<div class="penyakit">
 		<h2>Tambah Penyakit</h2>
-
+		<div class="row">
+			<div class="col-lg-6">
 		{!! Form::open(['url' => 'penyakit']) !!}
 		{{ csrf_field() }}	
 		<div class="form-group">
@@ -34,7 +35,6 @@
 		<div class="form-group">
 		{!! Form::submit('Tambah Penyakit', ['class'=>'btn btn-primary form-control']) !!}
 		</div>
-
 		<!-- <form action="{{ url('penyakit') }}" method="POST" role="form"> -->
 <!-- 			<legend>Tambah Penyakit</legend> -->
 
@@ -76,6 +76,8 @@
 			<!-- <button type="submit" class="btn btn-primary">Submit</button> -->
 		<!-- </form> -->
 		{!! Form::close() !!}
+	</div>
+	</div>
 	</div>
 	@stop
 	
