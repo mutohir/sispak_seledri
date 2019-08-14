@@ -16,4 +16,5 @@ Route::get('tentang', 'HalamanController@tentang' );
 //Penyakit
 Route::get('penyakit', 'PenyakitController@index');
 Route::get('penyakit/create', 'PenyakitController@create');
+Route::get('penyakit/{id}', 'PenyakitController@show');
 Route::post('penyakit', 'PenyakitController@store');
