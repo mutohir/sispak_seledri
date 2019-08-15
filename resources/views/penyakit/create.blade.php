@@ -15,7 +15,6 @@
 			@endif
 				{!! Form::label('kd_penyakit', 'Kode Penyakit :', ['class'=>'control-label']) !!}
 				{!! Form::text('kd_penyakit', null, ['class'=>'form-control','placeholder'=>'Kode Penyakit. Cth: H1']) !!}
-				{!! Form::hidden('id', null) !!}
 					@if($errors->has('kd_penyakit'))
 						<span class="help-block">{{ $errors->first('kd_penyakit') }}</span>
 					@endif

@@ -63,6 +63,22 @@ class PenyakitController extends Controller
     public function update($id, Request $request)
     {
     	$penyakit = Penyakit::find($id);
+    	$input = $request->all();
+
+	    	$validator = Validator::make($input, [
+			'kd_penyakit' => 'required|unique:penyakit,kd_penyakit,'. $request->input('id'),
+			'nm_penyakit' => 'required',
+			'def_penyakit' => 'required',
+			'sol_penyakit' => 'required',
+			'np_penyakit' => 'required',
+			]);
+
+		if ($validator->fails()) {
+		return redirect('penyakit/create')
+		->withInput()
+		->withErrors($validator);
+		}
+
     	$penyakit->update($request->all());
     	return redirect('penyakit');
     }
