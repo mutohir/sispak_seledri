@@ -29,8 +29,18 @@
 				<td width="300">{{ $penyakit->def_penyakit }}</td>
 				<td width="300">{{ $penyakit->sol_penyakit }}</td>
 				<td width="20">{{ $penyakit->np_penyakit }}</td>
-				<td width="125" class="text-center">
+				<td width="200" class="text-center">
+					<div class="box-button">	
 					{{ link_to('penyakit/' . $penyakit->id, 'Detail', ['class'=>'btn btn-sm btn-success']) }}
+					</div>
+					<div class="box-button">
+					{{ link_to('penyakit/' . $penyakit->id . '/edit', 'Edit', ['class'=>'btn btn-sm btn-warning']) }}
+					</div>
+					<div class="box-button">
+					{!! Form::open(['method'=>'DELETE', 'action'=>['PenyakitController@destroy', $penyakit->id]]) !!}
+					{!! Form::submit('Delete', ['class'=>'btn btn-sm btn-danger']) !!}
+					{!! Form::Close() !!}
+					</div>
 				</td>
 			</tr>
 			@endforeach
@@ -50,7 +60,5 @@
 	@stop
 	
 	@section('footer')
-		<footer id="footer" class="text-center">
-			Copyright &copy;2019 <b>Mutohir Amin</b>. All rights Reserved.
-		</footer>
+		@include('template.footer');
 	@stop

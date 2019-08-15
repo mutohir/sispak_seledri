@@ -3,6 +3,7 @@
 	@section('main')
 	<div class="penyakit">
 		<h2>Tambah Penyakit</h2>
+		@include('errors.form_error');
 		<div class="row">
 			<div class="col-lg-6">
 			{!! Form::open(['url' => 'penyakit']) !!}
@@ -30,7 +31,7 @@
 
 			<div class="form-group">
 			{!! Form::label('np_penyakit', 'Nilai Probabilitas', ['class'=>'control-label']) !!}
-			{!! Form::text('np_penyakit', null, ['class'=>'form-control','placeholder'=>'Nilai Probabilitas. Cth: 0.7']) !!}
+			{!! Form::number('np_penyakit', null, ['class'=>'form-control','placeholder'=>'Cth: 0.7', 'step'=>'0.1', 'max'=>'1']) !!}
 			</div>
 
 			<div class="form-group">
@@ -43,7 +44,5 @@
 	@stop
 	
 	@section('footer')
-		<footer id="footer" class="text-center">
-			Copyright &copy;2019 <b>Mutohir Amin</b>. All rights Reserved.
-		</footer>
+		@include('template.footer');
 	@stop

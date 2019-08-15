@@ -14,7 +14,12 @@
 Route::get('/', 'HalamanController@index');
 Route::get('tentang', 'HalamanController@tentang' );
 //Penyakit
-Route::get('penyakit', 'PenyakitController@index');
-Route::get('penyakit/create', 'PenyakitController@create');
-Route::get('penyakit/{id}', 'PenyakitController@show');
-Route::post('penyakit', 'PenyakitController@store');
+Route::group(['middleware' => ['web']], function(){	
+	Route::get('penyakit', 'PenyakitController@index');
+	Route::get('penyakit/create', 'PenyakitController@create');
+	Route::post('penyakit', 'PenyakitController@store');
+	Route::get('penyakit/{id}', 'PenyakitController@show');
+	Route::get('penyakit/{id}/edit', 'PenyakitController@edit');
+	Route::patch('penyakit/{id}', 'PenyakitController@update');
+	Route::delete('penyakit/{id}', 'PenyakitController@destroy');
+});

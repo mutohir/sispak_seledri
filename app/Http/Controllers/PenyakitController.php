@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Penyakit;
+use Validator;
 
 class PenyakitController extends Controller
 {
@@ -31,9 +32,46 @@ class PenyakitController extends Controller
 
     public function store(Request $request)
     {
-    	Penyakit::create($request->all());
+    	$input = $request->all();
 
+		$validator = Validator::make($input, [
+		'kd_penyakit' => 'required|unique:penyakit,kd_penyakit',
+		'nm_penyakit' => 'required',
+		'def_penyakit' => 'required',
+		'sol_penyakit' => 'required',
+		'np_penyakit' => 'required',
+		]);
+
+		if ($validator->fails()) {
+			return redirect('penyakit/create')
+			->withInput()
+			->withErrors($validator);
+		}
+
+    	Penyakit::create($input);
     	return redirect('penyakit');
 
     }
+
+    public function edit($id)
+    {
+    	$halaman = 'penyakit';
+    	$penyakit = Penyakit::find($id);
+    	return view('penyakit.edit', compact('halaman', 'penyakit'));
+    }
+
+    public function update($id, Request $request)
+    {
+    	$penyakit = Penyakit::find($id);
+    	$penyakit->update($request->all());
+    	return redirect('penyakit');
+    }
+		
+	public function destroy($id)
+    {
+    	$penyakit = Penyakit::find($id);
+    	$penyakit->delete();
+    	return redirect('penyakit');
+    }
+
 }

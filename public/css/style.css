@@ -17,3 +17,6 @@ footer{
 td{
 	word-break: break-all;
 }
+.box-button {
+	display: inline-block;
+}
