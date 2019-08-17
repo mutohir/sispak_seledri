@@ -9,28 +9,28 @@
 			{{ csrf_field() }}	
 			<div class="form-group">
 			{!! Form::label('kd_penyakit', 'Kode Penyakit :', ['class'=>'control-label']) !!}
-			{!! Form::text('kd_penyakit', $penyakit->kd_penyakit, ['class'=>'form-control','placeholder'=>'Kode Penyakit. Cth: H1']) !!}
+			{!! Form::text('kd_penyakit', $penyakit->kd_penyakit, ['class'=>'form-control','placeholder'=>'Kode Penyakit. Cth: H1','required']) !!}
 			{!! Form::hidden('id', $penyakit->id) !!}
 			</div>
 
 			<div class="form-group">
 			{!! Form::label('nm_penyakit', 'Nama Penyakit :', ['class'=>'control-label']) !!}
-			{!! Form::text('nm_penyakit', $penyakit->nm_penyakit, ['class'=>'form-control','placeholder'=>'Nama Penyakit']) !!}
+			{!! Form::text('nm_penyakit', $penyakit->nm_penyakit, ['class'=>'form-control','placeholder'=>'Nama Penyakit','required']) !!}
 			</div>
 				
 			<div class="form-group">
 			{!! Form::label('def_penyakit', 'Definisi Penyakit :', ['class'=>'control-label']) !!}
-			{!! Form::textarea('def_penyakit', $penyakit->def_penyakit, ['class'=>'form-control', 'cols'=>'10', 'rows'=>'5','placeholder'=>'Definisi Penyakit']) !!}
+			{!! Form::textarea('def_penyakit', $penyakit->def_penyakit, ['class'=>'form-control', 'cols'=>'10', 'rows'=>'5','placeholder'=>'Definisi Penyakit','required']) !!}
 			</div>
 
 			<div class="form-group">
 			{!! Form::label('sol_penyakit', 'Solusi Penyakit :', ['class'=>'control-label']) !!}
-			{!! Form::textarea('sol_penyakit', $penyakit->sol_penyakit, ['class'=>'form-control', 'cols'=>'10', 'rows'=>'5','placeholder'=>'Solusi Penyakit']) !!}
+			{!! Form::textarea('sol_penyakit', $penyakit->sol_penyakit, ['class'=>'form-control', 'cols'=>'10', 'rows'=>'5','placeholder'=>'Solusi Penyakit','required']) !!}
 			</div>
 
 			<div class="form-group">
 			{!! Form::label('np_penyakit', 'Nilai Probabilitas :', ['class'=>'control-label']) !!}
-			{!! Form::number('np_penyakit', $penyakit->np_penyakit, ['class'=>'form-control','step'=>'0.1', 'max'=>'1']) !!}
+			{!! Form::number('np_penyakit', $penyakit->np_penyakit, ['class'=>'form-control','step'=>'0.1', 'max'=>'1','required']) !!}
 			</div>
 
 			<div class="form-group">

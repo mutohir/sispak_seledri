@@ -10,14 +10,14 @@
 		<thead>
 			<tr>
 				<th>Kode Penyakit</th>
-				<td>{{ $gejala_penyakit->kd_gejala }}</td>
+				<td>{{ $daftar_gejala_penyakit->kd_gejala }}</td>
 			</tr>
 			<tr>
 				<th>Nama Penyakit</th>
-				<td>{{ $gejala_penyakit->nm_gejala }}</td>
+				<td>{{ $daftar_gejala_penyakit->nm_gejala }}</td>
 			</tr>
 	</table>
-	<a href="{{ url('penyakit') }}" class="btn btn-default">&laquo; Kembali</a>
+	<a href="{{ url('gejala_penyakit') }}" class="btn btn-default">&laquo; Kembali</a>
 	</div>
 	</div>
 	@stop

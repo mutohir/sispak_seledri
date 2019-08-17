@@ -112,6 +112,14 @@ return [
         'np_penyakit' => [
             'required' => 'Kolom Nilai Probabilitas harus diisi',
         ],
+        'kd_gejala_penyakit' => [
+            'required' => 'Kolom Kode gejala penyakit harus diisi',
+            'unique' => 'Kode sudah terpakai',
+        ],
+
+        'nm_gejala' => [
+            'required' => 'Kolom nama gejala harus diisi',
+        ],
     ],
 
     /*

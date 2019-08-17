@@ -23,3 +23,14 @@ Route::group(['middleware' => ['web']], function(){
 	Route::patch('penyakit/{id}', 'PenyakitController@update');
 	Route::delete('penyakit/{id}', 'PenyakitController@destroy');
 });
+
+//Gejala Penyakit
+Route::group(['middleware' => ['web']], function(){	
+	Route::get('gejala_penyakit', 'GejalaPenyakitController@index');
+	Route::get('gejala_penyakit/create', 'GejalaPenyakitController@create');
+	Route::post('gejala_penyakit', 'GejalaPenyakitController@store');
+	Route::get('gejala_penyakit/{id}', 'GejalaPenyakitController@show');
+	Route::get('gejala_penyakit/{id}/edit', 'GejalaPenyakitController@edit');
+	Route::patch('gejala_penyakit/{id}', 'GejalaPenyakitController@update');
+	Route::delete('gejala_penyakit/{id}', 'GejalaPenyakitController@destroy');
+});
