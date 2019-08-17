@@ -38,6 +38,14 @@
 					<li><a href="{{ url('penyakit') }}">Penyakit</a>
 					</li>
 					@endif
+
+					@if (!empty($halaman) && $halaman == 'gejala_penyakit')
+					<li class="active"><a href="{{ url('gejala_penyakit') }}">Gejala Penyakit 
+					<span class="sr-only">(current)</span></a></li>
+					@else
+					<li><a href="{{ url('gejala_penyakit') }}">Gejala Penyakit</a>
+					</li>
+					@endif
 				</ul>
 				
 				
