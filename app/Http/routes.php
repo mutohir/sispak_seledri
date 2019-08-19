@@ -34,3 +34,5 @@ Route::group(['middleware' => ['web']], function(){
 	Route::patch('gejala_penyakit/{id}', 'GejalaPenyakitController@update');
 	Route::delete('gejala_penyakit/{id}', 'GejalaPenyakitController@destroy');
 });
+
+Route::get('aturan_penyakit', 'AturanPenyakitController@index');

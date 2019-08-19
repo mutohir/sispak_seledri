@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableGejalaPenyakit extends Migration
+class CreateAturanPenyakit extends Migration
 {
     /**
      * Run the migrations.
@@ -12,10 +12,11 @@ class CreateTableGejalaPenyakit extends Migration
      */
     public function up()
     {
-        Schema::create('gejala_penyakit', function (Blueprint $table) {
+        Schema::create('aturan_penyakit', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('kd_gejala')->unique();
-            $table->string('nm_gejala');
+            $table->integer('id_gejala');
+            $table->integer('id_penyakit');
+            $table->string('np');
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ class CreateTableGejalaPenyakit extends Migration
      */
     public function down()
     {
-        Schema::drop('gejala_penyakit');
+        Schema::drop('aturan_penyakit');
     }
 }

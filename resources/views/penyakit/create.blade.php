@@ -14,7 +14,7 @@
 				<div class="form-group">
 			@endif
 				{!! Form::label('kd_penyakit', 'Kode Penyakit :', ['class'=>'control-label']) !!}
-				{!! Form::text('kd_penyakit', null, ['class'=>'form-control','placeholder'=>'Kode Penyakit. Cth: H1']) !!}
+				{!! Form::text('kd_penyakit', null, ['class'=>'form-control','placeholder'=>'Kode Penyakit. Cth: H1','required']) !!}
 					@if($errors->has('kd_penyakit'))
 						<span class="help-block">{{ $errors->first('kd_penyakit') }}</span>
 					@endif
@@ -26,7 +26,7 @@
 				<div class="form-group">
 			@endif
 				{!! Form::label('nm_penyakit', 'Nama Penyakit', ['class'=>'control-label']) !!}
-				{!! Form::text('nm_penyakit', null, ['class'=>'form-control','placeholder'=>'Nama Penyakit']) !!}
+				{!! Form::text('nm_penyakit', null, ['class'=>'form-control','placeholder'=>'Nama Penyakit','required']) !!}
 					@if($errors->has('nm_penyakit'))
 						<span class="help-block">{{ $errors->first('nm_penyakit') }}</span>
 					@endif
@@ -38,7 +38,7 @@
 				<div class="form-group">
 			@endif
 			{!! Form::label('def_penyakit', 'Definisi Penyakit', ['class'=>'control-label']) !!}
-			{!! Form::textarea('def_penyakit', null, ['class'=>'form-control', 'cols'=>'10', 'rows'=>'5','placeholder'=>'Definisi Penyakit']) !!}
+			{!! Form::textarea('def_penyakit', null, ['class'=>'form-control', 'cols'=>'10', 'rows'=>'5','placeholder'=>'Definisi Penyakit','required']) !!}
 				@if($errors->has('def_penyakit'))
 					<span class="help-block">{{ $errors->first('def_penyakit') }}</span>
 				@endif
@@ -50,7 +50,7 @@
 				<div class="form-group">
 			@endif
 			{!! Form::label('sol_penyakit', 'Solusi Penyakit', ['class'=>'control-label']) !!}
-			{!! Form::textarea('sol_penyakit', null, ['class'=>'form-control', 'cols'=>'10', 'rows'=>'5','placeholder'=>'Solusi Penyakit']) !!}
+			{!! Form::textarea('sol_penyakit', null, ['class'=>'form-control', 'cols'=>'10', 'rows'=>'5','placeholder'=>'Solusi Penyakit','required']) !!}
 				@if($errors->has('sol_penyakit'))
 					<span class="help-block">{{ $errors->first('sol_penyakit') }}</span>
 				@endif
@@ -62,7 +62,7 @@
 				<div class="form-group">
 			@endif
 			{!! Form::label('np_penyakit', 'Nilai Probabilitas', ['class'=>'control-label']) !!}
-			{!! Form::number('np_penyakit', null, ['class'=>'form-control','placeholder'=>'Cth: 0.7', 'step'=>'0.1', 'max'=>'1']) !!}
+			{!! Form::number('np_penyakit', null, ['class'=>'form-control','placeholder'=>'Cth: 0.7', 'step'=>'0.1', 'max'=>'1','required']) !!}
 				@if($errors->has('np_penyakit'))
 					<span class="help-block">{{ $errors->first('np_penyakit') }}</span>
 				@endif

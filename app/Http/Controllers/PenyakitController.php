@@ -89,5 +89,5 @@ class PenyakitController extends Controller
     	$penyakit->delete();
     	return redirect('penyakit');
     }
-
+    
 }
